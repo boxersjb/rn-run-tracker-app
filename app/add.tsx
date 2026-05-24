@@ -22,7 +22,7 @@ export default function Addtmp() {
   const [location, setLocation] = useState("");
   const [distance, setDistance] = useState("");
   const [timeOfDay, setTimeOfDay] = useState("");
-  const [runDate, setRunDate] = useState("");
+  // const [runDate, setRunDate] = useState("");
   const [imageUri, setImageUri] = useState<string | null>(null);
   const [base64Image, setBase64Image] = useState<string | null>(null);
 

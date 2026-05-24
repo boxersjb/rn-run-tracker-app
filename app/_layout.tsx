@@ -1,5 +1,4 @@
 import { SplashScreen, Stack } from "expo-router";
-import { StyleSheet } from "react-native";
 import { useFonts, Kanit_400Regular, Kanit_700Bold } from '@expo-google-fonts/kanit';
 import { useEffect } from "react";
 

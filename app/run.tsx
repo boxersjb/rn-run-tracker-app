@@ -6,7 +6,6 @@ import {
   View,
   TouchableOpacity,
   Image,
-  ScrollView
 } from 'react-native';
 import React, { useCallback, useState } from 'react';
 import { useFocusEffect, router } from 'expo-router';
@@ -50,15 +49,13 @@ export default function Run() {
   };
 
   const renderItem = ({ item }: { item: Runs }) => (
+
     <TouchableOpacity
       style={styles.card}
       onPress={() => router.push({
         pathname: "/[id]",
         params: {
-          id: item.id,
-          location: item.location,
-          distance: String(item.distance),
-          timeOfDay: item.time_of_day,
+          id: item.id
         },
       })
       }
@@ -83,9 +80,17 @@ export default function Run() {
   );
 
   return (
-    <View style={{ flex: 1, backgroundColor: '#f5f5f5' }}>
-      <FlatList data={runs} keyExtractor={(item) => item.id} renderItem={renderItem} />
-        //section add run button
+    <View style={styles.container}>
+      <FlatList
+        data={runs}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        ListHeaderComponent={
+          <Image source={require("@/assets/images/runner.png")} style={styles.imglogo} />
+        }
+      />
+
+      {/* section add run button */}
       <TouchableOpacity style={styles.btnAdd}>
         <FontAwesome6 name="add" size={30} color='#fff' onPress={() => router.push("/add")} />
       </TouchableOpacity>
@@ -94,6 +99,16 @@ export default function Run() {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
+  imglogo: {
+    width: 120,
+    height: 120,
+    marginTop: 40,
+    margin: "auto",
+  },
   btnAdd: {
     position: 'absolute',
     bottom: 20,

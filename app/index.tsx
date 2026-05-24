@@ -14,17 +14,17 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      //Image Logo
+      {/* Image Logo */}
       <Image
-        source={require("../assets/images/runner.png")}
+        source={require("@/assets/images/runner.png")}
         style={styles.imglogo}
       />
 
-      //Text Logo
+      {/* Text Logo */}
       <Text style={styles.txtHeader}>Run Tracker</Text>
       <Text style={styles.txtSub}>วิ่งเพื่อสุขภาพ</Text>
 
-      //circular progress bar
+      {/* circular progress bar */}
       <ActivityIndicator
         size="large"
         color="#555555"
